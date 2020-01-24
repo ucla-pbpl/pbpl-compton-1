@@ -3,8 +3,6 @@ import os, sys, random
 import argparse
 import numpy as np
 import toml
-from .core import setup_plot
-from .core import pbpl_blue_cmap
 from pbpl import compton
 import Geant4 as g4
 from Geant4.hepunit import *
@@ -14,6 +12,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plot
 import matplotlib as mpl
 from matplotlib.backends.backend_pdf import PdfPages
+import pbpl.common as common
 
 def get_parser():
     parser = argparse.ArgumentParser(
@@ -79,7 +78,7 @@ def plot_deposition_2d(output, conf, edep, xbin, ybin, zbin):
     # import ipdb
     # ipdb.set_trace()
     image = ax.imshow(
-        edep.T/(GeV/gammas_per_shot), cmap=pbpl_blue_cmap,
+        edep.T/(GeV/gammas_per_shot), cmap=common.blue_cmap,
         extent=(zbin[0]/mm, zbin[-1]/mm, ybin[0]/mm, ybin[-1]/mm),
         vmax=edep[30:].max()/(GeV/gammas_per_shot))
 #        extent=(xbin[0]/mm, xbin[-1]/mm, ybin[0]/mm, ybin[-1]/mm))
@@ -124,7 +123,7 @@ def main():
     ybin = fin['ybin'][:]*mm
     zbin = fin['zbin'][:]*mm
 
-    setup_plot()
+    common.setup_plot()
 
     out_fname = conf['Files']['Output']
     os.makedirs(os.path.dirname(out_fname), exist_ok=True)

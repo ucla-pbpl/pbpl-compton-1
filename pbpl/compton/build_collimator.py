@@ -32,7 +32,7 @@ import matplotlib.pyplot as plot
 from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 from Geant4.hepunit import *
-import pbpl.compton as compton
+import pbpl.common as common
 
 # Use mm internally for length scale.  OpenCascade internally also uses mm=1.0,
 # so don't bother converting lengths when sending/receiving from OpenCascade.
@@ -345,7 +345,7 @@ def create_homing_map(mappings):
 def plot_homing_map(filename, homing_map, hull):
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     output = PdfPages(filename)
-    compton.setup_plot()
+    common.setup_plot()
     plot.rc('figure.subplot', right=0.99, top=0.99, bottom=0.09, left=0.10)
 
     mesh_dx = 0.5*mm

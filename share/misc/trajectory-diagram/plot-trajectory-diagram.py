@@ -4,7 +4,7 @@ import matplotlib
 import matplotlib.pyplot as plot
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
-from pbpl import compton
+from pbpl import common
 from pbpl.common.units import *
 from scipy.spatial import KDTree
 from numpy.linalg import norm
@@ -133,7 +133,7 @@ def plot_sextupole(output):
         plot_fig(output, dx, E, B, cutoff, energies, alpha0, text, xlim, ylim)
 
 def main():
-    compton.setup_plot()
+    common.setup_plot()
 
     output = PdfPages('quadrupole-trajectory-diagram.pdf')
     plot_quadrupole(output)

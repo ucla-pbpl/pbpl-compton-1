@@ -11,7 +11,7 @@ from matplotlib.backends.backend_pdf import PdfPages
 from matplotlib.colors import LinearSegmentedColormap
 from scipy.integrate import simps
 from scipy.interpolate import griddata
-from pbpl import compton
+from pbpl import common
 from pbpl.common.units import *
 
 mrad = 1e-3
@@ -54,7 +54,7 @@ def plot_spot(
 
     contours = ax.contourf(
         x, y, A.reshape((100,100)).T / zscale[0],
-        levels=num_contours, cmap=compton.pbpl_blue_cmap, vmin=0)
+        levels=num_contours, cmap=common.blue_cmap, vmin=0)
     ax.contour(
         x, y, A.reshape((100,100)).T / zscale[0],
         levels=num_contours, colors='k', linewidths=0.4, vmin=0)
@@ -103,7 +103,7 @@ def plot_double_differential(
 
     contours = ax.contourf(
         x, y, A.reshape((100,100)).T / zscale[0],
-        levels=num_contours, cmap=compton.pbpl_blue_cmap, vmin=0)
+        levels=num_contours, cmap=common.blue_cmap, vmin=0)
     ax.contour(
         x, y, A.reshape((100,100)).T / zscale[0],
         levels=num_contours, colors='k', linewidths=0.4, vmin=0)
@@ -210,7 +210,7 @@ def plot_spectral_photon_density(
 
 def main():
     fin = h5py.File('d2W.h5', 'r')
-    compton.setup_plot()
+    common.setup_plot()
     os.makedirs('figs', exist_ok=True)
 
     # PWFA

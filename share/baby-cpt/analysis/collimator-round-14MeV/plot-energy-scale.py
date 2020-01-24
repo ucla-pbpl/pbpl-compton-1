@@ -7,6 +7,7 @@ import h5py
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plot
+from pbpl import common
 from pbpl import compton
 from pbpl.common.units import *
 from num2tex import num2tex
@@ -22,7 +23,7 @@ def fit_func(x, c0, c1, c2):
     return np.exp(c0 + c1*x + c2*x**2)
 
 def main():
-    compton.setup_plot()
+    common.setup_plot()
 
     energy = []
     position = []

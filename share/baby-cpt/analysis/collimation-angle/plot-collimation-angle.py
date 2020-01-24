@@ -7,7 +7,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plot
 from matplotlib.backends.backend_pdf import PdfPages
-from pbpl import compton
+from pbpl import common
 from pbpl.common.units import *
 
 def dump(
@@ -84,7 +84,7 @@ def dump(
     output.savefig(fig, transparent=True)
 
 def main():
-    compton.setup_plot()
+    common.setup_plot()
 
     with PdfPages('collimation-output.pdf') as output:
         dump(output, 'results/W-5-p45-10.h5', 'results/uncollimated.h5',

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plot
 from matplotlib.backends.backend_pdf import PdfPages
 import numpy as np
 import h5py
-from pbpl import compton
+from pbpl import common
 from Geant4.hepunit import *
 import common
 
@@ -127,7 +127,7 @@ def plot_run(output, filename, converter_thickness, gamma_energy, particle):
     # output.close()
 
 def main():
-    compton.setup_plot()
+    common.setup_plot()
     plot.rc('figure.subplot', right=0.96, top=0.97, bottom=0.15, left=0.13)
 
     output = PdfPages('comparison.pdf')
