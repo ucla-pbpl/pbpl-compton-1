@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import numpy as np
-from pbpl.compton.units import *
+from pbpl.common.units import *
 
 def main():
     m0 = me

@@ -12,7 +12,7 @@ from matplotlib.colors import LinearSegmentedColormap
 from scipy.integrate import simps
 from scipy.interpolate import griddata
 from pbpl import compton
-from pbpl.compton.units import *
+from pbpl.common.units import *
 
 mrad = 1e-3
 steradian = 1.0

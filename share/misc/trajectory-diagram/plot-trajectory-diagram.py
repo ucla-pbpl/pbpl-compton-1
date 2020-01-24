@@ -5,7 +5,7 @@ import matplotlib.pyplot as plot
 import numpy as np
 from matplotlib.backends.backend_pdf import PdfPages
 from pbpl import compton
-from pbpl.compton.units import *
+from pbpl.common.units import *
 from scipy.spatial import KDTree
 from numpy.linalg import norm
 from trajectory import calc_electron_trajectory

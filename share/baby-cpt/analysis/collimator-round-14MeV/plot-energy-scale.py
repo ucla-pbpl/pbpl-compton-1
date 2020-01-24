@@ -8,7 +8,7 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plot
 from pbpl import compton
-from pbpl.compton.units import *
+from pbpl.common.units import *
 from num2tex import num2tex
 
 def get_energy(gin):

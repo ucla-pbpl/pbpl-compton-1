@@ -2,7 +2,7 @@ import sys
 import numpy as np
 from scipy.integrate import ode
 from pbpl import compton
-from pbpl.compton.units import *
+from pbpl.common.units import *
 
 def calc_electron_trajectory(n0, x0, KE, E, B, dx, cutoff):
     m0 = me

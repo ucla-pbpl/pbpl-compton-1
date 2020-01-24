@@ -2,7 +2,7 @@
 import sys
 import argparse
 import numpy as np
-from pbpl.compton.units import *
+from pbpl.common.units import *
 import h5py
 from scipy.linalg import norm
 from collections import namedtuple

@@ -8,7 +8,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plot
 from matplotlib.backends.backend_pdf import PdfPages
 from pbpl import compton
-from pbpl.compton.units import *
+from pbpl.common.units import *
 
 def dump(
         output, collimated_filename, uncollimated_filename,
